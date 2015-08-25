@@ -342,4 +342,22 @@ void Sprite::CreateTextures(char* name){
 
 		// Close OBJ file
 		inOBJ.close();
+		SDL_Log("GetOBJinfo 11/n");
+		
+		return model;
 	}
+
+void Sprite::ExtractOBJdata(std::string fp, GLuint indexes)
+{
+	SDL_Log("APROBADO");
+	AAssetManager *assets = get_asset_manager();
+
+SDL_RWops *rw = AAsset_RWFromAsset(assets, (const char *)fp.c_str())
+
+char name[10240];
+if(rw != NULL){
+if(SDL_RWread(rw, name, sizeof (name), 1)>0){
+printf("Hello, s!\n", name);
+}
+}
+} 
